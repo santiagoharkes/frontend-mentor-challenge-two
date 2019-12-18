@@ -7,10 +7,8 @@
             }
             
             .background {
-                width: 100%;
                 background: hsl(257, 40%, 49%) url("./images/bg-desktop.svg") no-repeat;
                 background-size: cover;
-                height: 100%;
             }
             
             .logo {
@@ -39,7 +37,7 @@
                 display: flex;
                 width: 770px;
                 max-width: 770px;
-                flex: 65%;
+                /* flex: 65%; */
                 align-items: center;
                 justify-content: center;
             }
@@ -54,7 +52,7 @@
             .main .right {
                 padding-left: 55px;
                 padding-top: 65px;
-                flex: 35%
+                /* flex: 35% */
             }
             
             .main .right h1 {
@@ -72,6 +70,7 @@
                 line-height: 1.6;
                 font-size: 17px;
                 transition: all 0.5s ease-out;
+                max-width: 625px;
             }
             
             .main .right button {
@@ -110,10 +109,30 @@
                 font-size: 20px;
                 color: white;
             }
-
+            
+            @media screen and (min-height: 895px) {
+                body {
+                    height: 100vh;
+                }
+            }
+            
+            @media screen and (min-width: 790px) {
+                .background {
+                    height: 100%;
+                }
+            }
+            
             @media screen and (max-width: 790px) {
+                .background {
+                    width: 100%;
+                    background: hsl(257, 40%, 49%) url("./images/bg-mobile.svg") no-repeat;
+                    background-size: contain;
+                }
                 .main {
                     flex-wrap: wrap;
+                }
+                .main>.left>img {
+                    height: auto;
                 }
                 .main .right {
                     display: flex;
@@ -153,11 +172,7 @@
                 }
             }
             
-            @media screen and (max-width: 375px) {
-                .background {
-                    width: 100%;
-                    background: hsl(257, 40%, 49%) url("./images/bg-mobile.svg") no-repeat;
-                }
+            @media screen and (max-width: 510px) {
                 .logo>img {
                     width: 9em;
                     padding: 2em 2.5em;
@@ -166,7 +181,7 @@
                     padding: 0 1.5em;
                 }
                 .main .right h1 {
-                    font-size: 25px;
+                    font-size: 30px;
                 }
                 .main .right p {
                     font-size: 17px;
@@ -183,5 +198,11 @@
                 }
                 footer>a>i {
                     font-size: 17px;
+                }
+            }
+            
+            @media screen and (max-width: 375px) {
+                .main .right h1 {
+                    font-size: 25px;
                 }
             }
